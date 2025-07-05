@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <form method="post">
+        {% csrf_token %}
+        <h2>Player 1:</h2>
+        <label><input type="radio" name="player1" value="Rock" required> Rock</label><br>
+        <label><input type="radio" name="player1" value="Paper"> Paper</label><br>
+        <label><input type="radio" name="player1" value="Scissors"> Scissors</label><br>
+        
+        <h2>Player 2:</h2>
+        <label><input type="radio" name="player2" value="Rock" required> Rock</label><br>
+        <label><input type="radio" name="player2" value="Paper"> Paper</label><br>
+        <label><input type="radio" name="player2" value="Scissors"> Scissors</label><br>
+
+        <br>
+        <button type="submit">Play!</button>
+    </form>
+
+    {% if result %}
+        <p>Player 1 choice: {{ player1 }}</p>
+        <p>Player 2 choice: {{ player2 }}</p>
+        <p>Result: {{ result }}</p>
+    {% endif %}
+</body>
+</html>

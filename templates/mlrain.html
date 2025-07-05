@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rain Prediction</title>
+</head>
+<body>
+    <h1>Rain Prediction</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="temp" placeholder="Enter temperature"><br>
+        <input type="text" name="humidity" placeholder="Enter humidity"><br>
+        <input type="text" name="ph" placeholder="Enter pH"><br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if result %}
+        <h3>{{ result }}</h3>
+    {% endif %}
+</body>
+</html>

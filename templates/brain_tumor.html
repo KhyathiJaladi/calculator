@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deep Learning</title>
+</head>
+<body>
+    <h1>Brain tumor Prediction</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" placeholder="Enter image" accept="image/"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h3>{{ result }}</h3>
+        <p>Raw prediction value: {{ raw_prediction_value }}</p>
+    {% endif %}
+</body>
+</html>

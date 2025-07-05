@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="num1" placeholder="enter Age"><br>
+        <input type="text" name="num2" placeholder="enter Gender(Female,Male)"><br>
+        <input type="text" name="num3" placeholder="enter Family History(YES/NO)"><br>
+        <input type="text" name="num4" placeholder="enter Cholesterol_level"><br>
+        <input type="text" name="num5" placeholder="enter bmi"><br>
+        <input type="text" name="num6" placeholder="enter Asthma(1/0)"><br>
+        <input type="text" name="num7" placeholder="enter Cancer stage(Stage I/II/III/IV)"><br>
+        <input type="text" name="num8" placeholder="enter treatment type(Chemotherapy/Surgery/Combined/Radiation)"><br>
+        <input type="text" name="num9" placeholder="enter "><br>
+        <button type="submit">login</button><br>
+    </form>
+    {% if error %}
+    <h2 style="color: red">ERROR: {{ error }}</h2>
+    {% endif %}
+    <p>Don't have an account?</p>
+    <a href="{% url 'calculatorregister' %}">Register</a>
+</body>
+</html>
